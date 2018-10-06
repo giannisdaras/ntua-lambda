@@ -7,6 +7,8 @@ The files related to the course in general (such as theory and advanced exercise
 course.
 Exercises for each course should be added to a seperate folder indicating their year. Ideally, we would love to have the 
 question as well, together with the solution.
+
+
 **Important note:** All exercises solutions should be added **after** the deadline. This repo does not encourages cheating.
 It's main purpose is to collect resources that will enable better engagement with the courses of this flow.
 
