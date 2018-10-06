@@ -1,0 +1,17 @@
+16
+suriname 1 6 9
+colombia 1 6 8
+iceland 2 11 12
+ivorycoast 4 18 6
+sweden 2 10 9
+southkorea 1 4 8
+chile 3 13 11
+brazil 1 3 4
+madagascar 3 11 13
+finland 1 8 9
+tunisia 1 3 7
+yemen 1 6 9
+mauritius 1 0 2
+seychelles 2 9 6
+albania 2 4 5
+grenada 4 21 15

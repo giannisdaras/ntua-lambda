@@ -1,0 +1,5 @@
+4
+monaco 2 10 2
+andorra 2 6 4
+sanmarino 1 1 4
+liechtenstein 1 0 7

@@ -1,0 +1,9 @@
+8
+kiribati 1 5 8
+bulgaria 1 0 6
+luxembourg 3 16 9
+antigua 1 2 7
+australia 2 8 8
+ivorycoast 1 0 2
+bahamas 2 8 9
+afghanistan 3 10 0

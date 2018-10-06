@@ -1,0 +1,5 @@
+4
+ukraine 1 2 7
+malta 1 0 5
+bosnia 2 9 2
+mongolia 2 9 6
