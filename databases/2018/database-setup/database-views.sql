@@ -1,0 +1,2 @@
+create view hotel_room_capacity_view as select capacity,count(room_id) as rooms_per_capacity from hotel_room where room_id not in (select room_id from reserves where curdate() between start_date and finish_date) group by capacity; 
+create view hotel_room_location_view as select htl.city,count(htl_room.room_id) as rooms_per_city from hotel as htl inner join hotel_room as htl_room on htl.hotel_id=htl_room.hotel_id where htl_room.room_id not in (select room_id from reserves where curdate() between start_date and finish_date) group by city; 
