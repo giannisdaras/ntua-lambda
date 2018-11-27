@@ -15,8 +15,7 @@ int main(void){
 
   int DP[N+1][N/2+1];
   // i: poia keraia exetazw
-  // j: posous receivers exei aristera tis
-
+  // j: posous receivers exei dexia tis
   for (int i=1; i<=N; i++){
     for (int j=N/2; j>=0; j--){
       /* base case */
@@ -35,11 +34,4 @@ int main(void){
   }
 
   cout << DP[N][0] << endl;
-  /* Print the whole DP grid */
-  // for (int i=1; i<=N; i++){
-  //   for (int j=0; j<=N/2; j++){
-  //     cout << DP[i][j] << " ";
-  //   }
-  //   cout << endl;
-  // }
 }
