@@ -17,11 +17,12 @@ int main(void){
   }
 
   int DP[N][K][C+1];
-
+  int max_emotion = emotions[0][0];
   for (int j=0; j<K; j++){
     for (int c=0; c<=C; c++){
       if (c >= values[0][j]){
-        DP[0][j][c] = emotions[0][j];
+        if (emotions[0][j] > max_emotion) max_emotion = emotions[0][j];
+        DP[0][j][c] = max_emotion;
       }
       else{
         DP[0][j][c] = DP[0][j-1][c];
@@ -39,19 +40,8 @@ int main(void){
         else if (c<values[i][j]) DP[i][j][c] = DP[i][j-1][c];
         // an mporeis na to pareis, des an se simferei na to pareis.
         else DP[i][j][c] = max(DP[i-1][K-1][c - values[i][j]] + emotions[i][j], DP[i][j-1][c]);
-
       }
     }
   }
-  // cout << "Lisi" << endl;
   cout << DP[N-1][K-1][C] << endl;
-  // for (int i=0; i<N; i++){
-  //   cout << "Nea xwra" << endl;
-  //   for (int j=0; j<K; j++){
-  //     for (int c=0; c<=C; c++){
-  //       cout << DP[i][j][c] << " ";
-  //     }
-  //     cout << endl;
-  //   }
-  // }
 }
