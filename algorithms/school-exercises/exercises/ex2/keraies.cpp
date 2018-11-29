@@ -1,8 +1,9 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <climits>
 using namespace std;
-
+const int max_num = 1e6;
 int main(void){
   int N;
   cin >> N;
@@ -21,7 +22,9 @@ int main(void){
       /* base case */
       if (i==1 && j == N/2) DP[i][j] = keraies[1].first;
       /* penalize wrong cases */
-      else if (i==1) DP[i][j] = 1e6;
+      else if (i==1) {
+        DP[i][j] = max_num;
+      }
       else{
         /* an exei N/2 receivers dexia tote tha einai sigoura pompos */
         if (j==N/2) DP[i][j] = keraies[i].first + DP[i-1][j];
