@@ -1,98 +1,108 @@
 #include <iostream>
 #include <cstdio>
 #include <math.h>
+#include <fstream>
+#include <string>
 using namespace std;
-const int MAX_LEN = 1e6;
+const int MAX_LEN = 1e8;
 long long seq[MAX_LEN];
-int m_golden[MAX_LEN];
-int m_bronze[MAX_LEN];
-int l_golden = 0;
-int l_bronze = 0;
+int golden[MAX_LEN];
+int bronze[MAX_LEN];
+int golden_high = 0;
+int bronze_high = 0;
 bool bronze_flag = false;
 int bronze_low;
-int bronze_high;
+
+// bool debug = true;
+bool debug = false;
+
+int sequence_length;
 /*
-to m_golden[i] exei to teliko stoixeio tis megaliteris golden akolouthias
+to golden[i] exei to teliko stoixeio tis megaliteris golden akolouthias
 mikous i.
 */
 int main(void){
+  // std::ifstream in("credits/input11.txt");
+  // std::streambuf *cinbuf = std::cin.rdbuf(); //save old buf
+  // std::cin.rdbuf(in.rdbuf()); //redirect std::cin to in.txt!
   int N;
-  scanf("%d", &N);
+  cin >> N;
+  // scanf("%d", &N);
   for (int i=0; i<N; i++){
-    scanf("%lld", &seq[i]);
+    // scanf("%lld", &seq[i]);
+    cin >> seq[i];
   }
   for (int i=0; i<N; i++){
-    /* psaxnw ti megaliteri golden akolouthia pou mporw na to valw */
+    /* -------------------------- GOLDEN ------------------------------------ */
     int lo = 1;
-    int hi = l_golden;
+    int hi = golden_high;
     while (lo <= hi){
       int mid = ceil((lo + hi)/2);
-      if (seq[m_golden[mid]] < seq[i]) lo = mid + 1;
+      if (seq[golden[mid]] < seq[i]) lo = mid + 1;
       else hi = mid - 1;
     }
-    /* to lo exei to mikos tis megaliteris golden akolouthias pou mporw na to
-    valw + 1*/
-    /*
-      oi diagrafes ginontai me oti spane oi isopalies sta miki vazontas tin
-      kainourgia.
-    */
-    m_golden[lo] = i;
-    if (lo > l_golden){
-      l_golden = lo;
+    golden[lo] = i;
+    if (lo > golden_high){
+      golden_high = lo;
     }
     else if (bronze_flag == false){
-      /* h prwti pou mpainei stis bronze */
       bronze_flag = true;
-      // to bronze_low einai to mikos tis mikroteris akolouthias pou exoume
-      // valei mesa sto bronze. Afto, pithanws na afxithei.
-      bronze_low = l_golden; // h kainourgia pou tha mpei
-      // to l_bronze einai to mikos tis megaliteris akolouthias pou iparxei
-      // mesa sto bronze
-      l_bronze = 0;
+      bronze_low = golden_high + 1; // h kainourgia pou tha mpei
+      bronze_high = 0;
     }
 
+    /* -------------------------- BRONZE ------------------------------------*/
+
     if (bronze_flag){
-      // an exw mesa akolouthies stis bronze, arxika prepei na epekteinw ti
-      // megaliteri, opos akrivws kaname stis golden
+      /* -------------------- epektasi --------------------------------------*/
       int new_low = bronze_low;
-      int new_high = l_bronze;
+      int new_high = bronze_high;
       while (new_low <= new_high){
         int mid = ceil ( (new_low + new_high) / 2);
-        if (seq[m_bronze[mid]] < seq[i]) new_low = mid + 1;
+        if (seq[bronze[mid]] < seq[i]) new_low = mid + 1;
         else new_high = mid - 1;
       }
-      m_bronze[new_low] = i;
-      if (new_low > l_bronze){
-        l_bronze = new_low;
+      bronze[new_low] = i;
+      if (new_low > bronze_high){
+        bronze_high = new_low;
       }
 
-      /* panta bazw ti megaliteri apo tis golden */
-      int sequence_length = l_golden + 1;
-      if (seq[m_bronze[sequence_length]] > seq[i]){
-      /* psaxnw tin megaliteri mikroteri akolouthia pou exei teliko stoixeio
-      mikrotero apo to diko mou
-      */
-      int new_low = bronze_low;
-      int new_high = sequence_length;
-      while (new_low <= new_high){
-        int mid = ceil ( (new_low + new_high) / 2);
-        if (seq[m_bronze[mid]] < seq[i]) new_low = mid + 1;
-        else  new_high = mid - 1;
+      /* -------------------- merge -----------------------------------------*/
+      if (lo != golden_high){
+        sequence_length = min(golden_high + 1, N-1);
+        /* to parakatw if sigrinei tin ektimisi pou exw gia afto to mikos
+        akolouthias me to pragmatiko */
+        if (seq[bronze[sequence_length]] >= seq[i]){
+          /* an to kainourgio pou irthe einai pio megalo, tote vazw to
+          kainourgio */
+          bronze[sequence_length] = i;
+          int new_low = bronze_low;
+          int new_high = sequence_length;
+          int mid;
+          while (new_low <= new_high){
+            mid = ceil ( (new_low + new_high) / 2);
+            if (seq[bronze[mid]] < seq[i]) new_low = mid + 1;
+            else  new_high = mid - 1;
+          }
+          if (seq[bronze[mid]] < seq[i]){
+            bronze_low = mid;
+          }
+          else{
+            bronze_low = sequence_length;
+          }
+        }
       }
-      /* to stoixeio pou brika einai to new_low */
-      bronze_low = new_low;
-      m_bronze[sequence_length] = i;
-      if (sequence_length > l_bronze){
-        l_bronze = sequence_length;
-      }
-      }
+    }
+    if (debug){
+      cout << "Golden: " << golden_high << " with biggest last " <<
+      seq[golden[golden_high]] << " Bronze: " << bronze_high <<
+      " with biggest last " <<
+      seq[bronze[bronze_high]]  <<  " Bronze low " <<
+      bronze_low << " Bronze high " << bronze_high << endl;
     }
   }
 
-
-
-
-  cout << max(l_bronze, l_golden) << endl;
+  cout << max(bronze_high, golden_high) << endl;
 
 
 }
