@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+<Document>
+<name>Client Placemark</name>
+<Placemark>
+<name>Client</name>
+<Point>
+<coordinates>
+23.733998,37.9756885
+</coordinates>
+</Point>
+</Placemark>
+</Document>
+</kml>

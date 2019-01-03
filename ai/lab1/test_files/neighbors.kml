@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+<Document>
+<name>Taxi Routes</name>
+<Style id="green">
+<LineStyle>
+<color>ff00b200</color>
+<width>4</width>
+</LineStyle>
+</Style>
+<Placemark>
+<name>Client</name>
+<Point>
+<coordinates>
+23.7348068,37.9768472
+</coordinates>
+</Point>
+</Placemark>
+<Placemark>
+<name>Client</name>
+<Point>
+<coordinates>
+23.734151,37.9776286
+</coordinates>
+</Point>
+</Placemark>
+</Document>
+</kml>

@@ -1,0 +1,20 @@
+\BOOKMARK [1][-]{section.1}{Στόχος εργασίας}{}% 1
+\BOOKMARK [1][-]{section.2}{Αρχιτεκτονική σχεδίασης}{}% 2
+\BOOKMARK [1][-]{section.3}{Δεδομένα & Μοντελοποίηση προβλήματος}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Προεπεξεργασία δοθέντων δεδομένων}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Στατιστική ανάλυση δεδομένων}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Μοντελοποίηση σε επίπεδο κώδικα}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{Αλγόριθμος A*}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{Διαφορές από τον κλασσικό αλγόριθμο}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{Βελτιστότητα A*}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.3}{Ιδέες υλοποίησης}{section.4}% 10
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Υπολογισμός απόστασης και ευριστική συνάρτηση}{subsection.4.3}% 11
+\BOOKMARK [2][-]{subsection.4.4}{Υλοποίηση σε επίπεδο κώδικα}{section.4}% 12
+\BOOKMARK [1][-]{section.5}{KMLExports}{}% 13
+\BOOKMARK [1][-]{section.6}{Εφαρμογές}{}% 14
+\BOOKMARK [2][-]{subsection.6.1}{Βέλτιστη διαδρομή στα δεδομένα εκφώνησης}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.2}{Εναλλακτικές διαδρομές στα δεδομένα εκφώνησης}{section.6}% 16
+\BOOKMARK [2][-]{subsection.6.3}{Βέλτιστη διαδρομή σε δικά μας δεδομένα}{section.6}% 17
+\BOOKMARK [2][-]{subsection.6.4}{Εναλλακτικές διαδρομές σε δικά μας δεδομένα}{section.6}% 18
+\BOOKMARK [1][-]{section.7}{Απαντήσεις σε ερωτήσεις εκφώνησης}{}% 19
+\BOOKMARK [1][-]{section.8}{Βιβλιογραφία}{}% 20

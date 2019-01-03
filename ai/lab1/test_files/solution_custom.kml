@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.1">
+<Document>
+<name>Taxi Routes</name>
+<Style id="green">
+<LineStyle>
+<color>ff00b200</color>
+<width>4</width>
+</LineStyle>
+</Style>
+<Style id="black">
+<LineStyle>
+<color>ff000000</color>
+<width>4</width>
+</LineStyle>
+</Style>
+<Style id="red">
+<LineStyle>
+<color>ffb20000</color>
+<width>4</width>
+</LineStyle>
+</Style>
+<Style id="blue">
+<LineStyle>
+<color>ff0000b2</color>
+<width>4</width>
+</LineStyle>
+</Style>
+<Style id="cyan">
+<LineStyle>
+<color>ff00b2b2</color>
+<width>4</width>
+</LineStyle>
+</Style>
+<Style id="yellow">
+<LineStyle>
+<color>ffb2b200</color>
+<width>4</width>
+</LineStyle>
+</Style>
+<Placemark>
+<name> Line </name>
+<styleUrl>#green</styleUrl>
+<LineString>
+<altitudeMode>relative</altitudeMode>
+<coordinates>
+23.7890063,38.0330795
+23.7875286,38.0331478
+23.7867802,38.0325836
+23.7862584,38.032129
+23.7860838,38.0322367
+23.7855892,38.0317197
+23.7855067,38.0316304
+23.7849196,38.0309994
+23.7848795,38.0309518
+23.7844074,38.0304056
+23.7844329,38.0303655
+23.7843396,38.0302738
+23.7840144,38.0299888
+23.7840551,38.0298127
+23.7840694,38.0296545
+23.7835815,38.0291486
+23.7830992,38.0286485
+23.7828853,38.0287486
+23.7824819,38.028343
+23.7824281,38.0282764
+23.7824997,38.028234
+23.7831089,38.0278518
+</coordinates>
+</LineString>
+</Placemark>
+</Document>
+</kml>
