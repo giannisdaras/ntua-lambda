@@ -1,0 +1,47 @@
+\BOOKMARK [1][-]{section.1}{Άσκηση 1}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Διατύπωση αλγορίθμου}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Ορθότητα αλγορίθμου}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Πολυπλοκότητα λύσης}{section.1}% 4
+\BOOKMARK [1][-]{section.2}{Άσκηση 2}{}% 5
+\BOOKMARK [2][-]{subsection.2.1}{\(α\)}{section.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Διατύπωση αλγορίθμου}{subsection.2.1}% 7
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Απόδειξη ορθότητας}{subsection.2.1}% 8
+\BOOKMARK [3][-]{subsubsection.2.1.3}{Πολυπλοκότητα}{subsection.2.1}% 9
+\BOOKMARK [3][-]{subsubsection.2.1.4}{Διατύπωση αλγορίθμου}{subsection.2.1}% 10
+\BOOKMARK [3][-]{subsubsection.2.1.5}{Απόδειξη ορθότητας}{subsection.2.1}% 11
+\BOOKMARK [3][-]{subsubsection.2.1.6}{Πολυπλοκότητα}{subsection.2.1}% 12
+\BOOKMARK [1][-]{section.3}{Άσκηση 3}{}% 13
+\BOOKMARK [2][-]{subsection.3.1}{Minimax\040algorithm}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.2}{AB\040Pruning}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.3}{Διατύπωση αλγορίθμου}{section.3}% 16
+\BOOKMARK [2][-]{subsection.3.4}{Πολυπλοκότητα}{section.3}% 17
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Κατασκευή γράφου}{subsection.3.4}% 18
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Επισημειώσεις a, b, c}{subsection.3.4}% 19
+\BOOKMARK [3][-]{subsubsection.3.4.3}{Minimax}{subsection.3.4}% 20
+\BOOKMARK [2][-]{subsection.3.5}{Ορθότητα αλγορίθμου}{section.3}% 21
+\BOOKMARK [1][-]{section.4}{Άσκηση 4}{}% 22
+\BOOKMARK [2][-]{subsection.4.1}{\(α\)}{section.4}% 23
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Απόδειξη ύπαρξης ακμής}{subsection.4.1}% 24
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Απόδειξη συνεκτικότητας}{subsection.4.1}% 25
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Αλγόριθμος εύρεσης μιας τέτοιας ακμής}{subsection.4.1}% 26
+\BOOKMARK [3][-]{subsubsection.4.1.4}{Πολυπλοκότητα αλγορίθμου}{subsection.4.1}% 27
+\BOOKMARK [2][-]{subsection.4.2}{\(β\)}{section.4}% 28
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Συνεκτικότητα γραφήματος H}{subsection.4.2}% 29
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Μήκος συντομότερου μονοπατιού στο H}{subsection.4.2}% 30
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Αλγόριθμος εύρεσης συντομότερου μονοπατιού στο H}{subsection.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.3}{\(γ\)}{section.4}% 32
+\BOOKMARK [2][-]{subsection.4.4}{Διατύπωση αλγορίθμου}{section.4}% 33
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Πολυπλοκότητα}{subsection.4.4}% 34
+\BOOKMARK [1][-]{section.5}{Άσκηση 5}{}% 35
+\BOOKMARK [2][-]{subsection.5.1}{\(α\)}{section.5}% 36
+\BOOKMARK [2][-]{subsection.5.2}{\(β\)}{section.5}% 37
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Απόδειξη}{subsection.5.2}% 38
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Αντιπαράδειγμα}{subsection.5.2}% 39
+\BOOKMARK [2][-]{subsection.5.3}{\(γ\)}{section.5}% 40
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Ικανή συνθήκη}{subsection.5.3}% 41
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Αναγκαία συνθήκη}{subsection.5.3}% 42
+\BOOKMARK [2][-]{subsection.5.4}{\(δ\)}{section.5}% 43
+\BOOKMARK [2][-]{subsection.5.5}{Διατύπωση αλγορίθμου}{section.5}% 44
+\BOOKMARK [3][-]{subsubsection.5.5.1}{Ορθότητα αλγορίθμου}{subsection.5.5}% 45
+\BOOKMARK [2][-]{subsection.5.6}{Πολυπλοκότητα}{section.5}% 46
+\BOOKMARK [1][-]{section.6}{Βιβλιογραφία}{}% 47
