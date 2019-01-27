@@ -1,38 +1,265 @@
-### Ορισμοί και προδιαγραφές
 
-Λογισμικό: προγράμματα + δεδομένα + τεκμηρίωση
 
-Πηγαίος κώδικας, προδιαγραφές/εκθέσεις/αναφορές, σχέδια, διαγράμματα, 
-
-Στο λογισμικό θέλουμε: ορθότητα, χρονική συνέπεια, τεκμηρίωση, ποιότητα, λογική τιμή
+## SOS θεωρία
 
 
 
-Project planning:
+### Stakeholders
 
-- project split
-- cost estimation
-- milestones
+Το σύνολο των ανθρώπων οι οποίοι αμα δεν υπήρχαν η εταιρεία θα αδυνατούσε να υπάρξει. Πχ: διοίκηση,  μέτοχοι, αγοραστικό κοινό, κ.α.
 
-**W**ork **B**reakdown **S**tructure (Ιεραρχική κατανομή εργασιών) (WBS)
+### Critical Path
 
-
-
-### Critical path
-
-Η ακολουθία των ενεργειών που θα αποτύχουν αν αποτύχει το έργο.
-
-
+Η ακολουθία των ενεργειών που θα αποτύχουν αν αποτύχει το έργο. Είναι η μεγαλύτερη ακολουθία από δραστηριότητες που πρέπει να γίνουν ώστε να τελειώσει το έργο on time.
 
 ### Χαλαρό περιθώριο (stack, float)
 
 Το χρονικό διάστημα που μπορεί να καθυστερήσει μια εργασία χωρίς να καθυστερήσει κάποια επόμενη της ή το έργο συνολικά.
 
-
-
 ### Gant charts
 
-every task from WCB has some that it depends on and three times associated with it: optimistic, normal, pessimistic.
+Διαγραμματική αποτύπωση των εξαρτήσεων και των χρόνων ολοκλήρωσης ενός project.
+
+### Work Breakdown Structure (WBS)
+
+Είναι μια ιεραρχική κατανομή εργασιών όπου μεγαλύτερα task γίνονται divide σε μικρότερα, αναλύονται σε μεγαλύτερο βαθμό μέχρι να μπορούν να γίνουν assign σε ένα άτομο ή μια ομάδα.
+
+Περιλαμβάνει:
+
+- project split
+- cost estimation
+- milestones
+
+### Άλλα
+
+Κατασκευαστικό επίπεδο (RBD) vs Εννοιολογικό Επίπεδο (RED) περιγραφής.
+
+
+
+### Database view
+
+A **database view** is a searchable object in a **database**that is defined by a query. Though a **view** doesn't store data, some refer to a **views** as “virtual tables,” you can query a **view** like you can a table. A **view** can combine data from two or more table, using joins, and also just contain a subset of information.
+
+## Διαγράμματα
+
+Δύο μεγάλες:
+
+* Structure Diagrams
+
+  * Class Diagram
+
+    - A class is a rectangle divided into:
+      - Class name
+      - Class atributes
+      - Class operations
+    - Modifiers:
+      - $-$ Private
+      - $+ $ Public
+      - $\#$ Protected
+      - $/$ derived. Can be combined with others
+      - Underlined: Static 
+    - Abstract classes in italics
+
+    ##### Multiplicities
+
+    Τις βάζουμε στο edge end που αφορούν
+
+    0..1: zero or one instances
+
+    0..*: zero to infinity instances
+
+    1: exactly one instance
+
+    1..*: one or more instances
+
+    ##### Association
+
+    Logical relation between entities (high level).
+
+    Μπορούμε να βάλουμε labels πάνω στα associations.
+
+    Πάνω στα labels μπορούμε να βάλουμε και τα reading directions.
+
+    ##### Aggregation
+
+    Δείχνει ένα has-A αλλά η άλλη κλάση μπορεί να υπάρξει και μόνη της.
+
+    
+
+    ![](/home/giannis/ntua-lambda/softeng/aggregation.jpg)
+
+    Μια ρόδα μπορεί να υπάρχει χωρίς να ανήκει σε κάποιο αμάξι.
+
+    ##### Composition
+
+    Και αυτό κάνει demonstrate μια "has-A" σχέση, αλλά εδώ τα πράγματα ειναι πιο σκληρά. Άμα πεθάνει η base class πεθαίνει και το άλλο class. 
+
+    ![](/home/giannis/ntua-lambda/softeng/composition.jpg)
+
+    Δεν μπορεί να υπάρχει ένα αυθύπαρκτο leg.	
+
+    ##### Realization / Implementation
+
+    Arrow meaning: source **realizes** dst.
+
+    Πάει πολύ για abstract classes / interfaces.
+
+    ![](https://cdn.visual-paradigm.com/guide/uml/uml-class-diagram-tutorial/16-realization.png)
+
+    
+
+    Δεν μπορείς να φτιάξεις ποτέ έναν owner. Όμως μπορείς να φτιάξεις έναν Person που κάνει implement τον Owner.
+
+    ##### Inheritance
+
+    Arrow meaning: source **inherits** from dst.
+
+    
+
+    ![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/KP-UML-Generalization-20060325.svg/300px-KP-UML-Generalization-20060325.svg.png)
+
+    
+
+    Μπορείς δηλαδή να φτιάξεις ένα Person που δεν είναι ούτε Student ούτε Professor.
+
+    ##### Dependency
+
+    Το dependency σημαίνει ότι δεν υπάρχει σχέση foreign key, αλλά μπορεί να υπάρχει κάποια συνάρτηση που να παίρνει ως όρισμα ένα αντικείμενο μιας τέτοιας άλλης κλάσης. 
+
+    Για παράδειγμα, ένας Person μπορεί να σκοτώσει ένα Fish.
+
+    
+
+    ![](/home/giannis/ntua-lambda/softeng/dependency.jpg)
+
+  * Object Diagram. 
+
+    Μια instantiated αναπαράσταση της εφαρμογής σε κάποια ενδεικτική φάση της.
+
+    ![](https://cdn.visual-paradigm.com/guide/uml/what-is-object-diagram/03-class-diagram-to-object-diagram.png)
+
+  * Package Diagram
+
+    ![](https://cdn.visual-paradigm.com/guide/uml/what-is-package-diagram/02-simple-package-diagram-example.png)
+
+  * Composite structure diagram
+
+    Δεν το έχουμε κάνει
+
+  * Component Diagram
+
+    A component diagram, also known as a UML component diagram, describes the organization and wiring of the physical components in a system. It is produced in two phases: The first phase is much more physical, components are files wired together. In the second phase, components get a logical sense and they are just a slightly higher abstraction than classes. It is represented as a rectangle with a smaller rectangle in the upper right corner with tabs or the word written above the name of the component to help distinguish it from a class.
+
+    
+
+    ![](https://wcs.smartdraw.com/component-diagram/img/component-symbol.jpg?bn=1510011143)
+
+    
+
+    Interface. Component connects to the outside world and other components using an interface.
+
+    ![](https://wcs.smartdraw.com/component-diagram/img/interface-symbol.jpg?bn=1510011143)
+
+  
+
+  
+
+  * Deployment Diagram
+
+    The deployment diagram describes process nodes and the way they connect together.
+
+    Nodes (blue box) contain inside them components (see above) which communicate through interfaces and are identified by the programming <<artifact>> they are stereotyped with.
+
+    The result of our application to the outside world is show using those silly symbols above the blue box.
+
+    ![](/home/giannis/ntua-lambda/softeng/component_diagram.jpg)
+
+  * Profile diagram
+
+    Δεν έχουμε κάνει
+
+* Behavior Diagrams
+
+  * UseCase Diagram
+
+    Εστιάζει στις διαδικασίες που γίνεται ως test cases.
+
+    ##### Include relation
+
+    Λέει σε τι επιμέρους κομμάτια γίνεται split μια ενέργεια. 
+
+    ![](https://www.uml-diagrams.org/use-case-diagrams/use-case-include-split.png)
+
+    ##### Generalization
+
+    Κάτι σαν να βάζεις επίπεδα abstraction.
+
+    Ότι για παράδειγμα, ένα withdraw cash ανήκει στην κατηγορία action Bank ATM Transaction.
+
+    ![](https://i.stack.imgur.com/VThNF.png)
+
+    
+
+    ##### Extend
+
+    ![](http://www.ropley.com/Data/Sites/1/userfiles/uc4.png)
+
+    
+
+  * Information Flow Diagram / Data Flow diagram
+
+    Εστιάζει στο πως ρέουν τα δεδομένα μέσα στις διάφορες διεργασίες με **χρονικές επισημειώσεις**!
+
+    
+
+    ![](https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Data-flow-diagram-notation.svg/220px-Data-flow-diagram-notation.svg.png)
+
+  
+
+  Example:
+
+  ![](https://d2slcw3kip6qmk.cloudfront.net/marketing/pages/chart/examples/simpledataflowdiagram.svg)
+
+  
+
+  Από εδώ βγαίνει άμεσα και το διάγραμμα δομής ενός προγράμματος:
+
+  ![](/home/giannis/Pictures/structured_arch.png)
+
+  * Activity Diagram
+
+    Οι διαφορές του με το State Diagram είναι:
+
+    * Οι πολλαπλές ενέργειες ξεκινάνε από ένα μαύρο και καταλήγουν σε ένα μαύρο
+    * Οι δυνατές επιλογές είναι ρόμβοι
+
+    ![](/home/giannis/ntua-lambda/softeng/activity_diagram.jpg)
+
+  * State Machine Diagram
+
+    ![](/home/giannis/Pictures/state_diagram.png)
+
+  * Interaction Diagram
+
+    * Communication diagram
+
+      Είναι μια επέκταση του Object diagram. Δείχνει τα objects αλλά και το πώς επικοινωνούν με τη μορφή μηνυμάτων με χρονικές επισημειώσεις.
+
+      Τα objects δεν παρουσίαζονται με τη σειρά που γίνονται.
+
+      
+
+      
+
+      ![](https://cdn.visual-paradigm.com/guide/uml/what-is-communication-diagram/03-communication-diagram-example-hotel-reservation.png)
+
+    * Sequence Diagram
+
+      ![](https://www.researchgate.net/profile/Qusay_Al-Zoubi/publication/312174531/figure/fig10/AS:448933961965574@1484045605217/Send-Notification-Sequence-Diagram.png)
+
+Είναι μια διαφορετική παρουσίαση του Communication diagram όπου η διάταξη γίνεται ως προς το χρόνο. Η διαφορά κάθε μπάρας από την προήγουμενη της δείχνει πόσος χρόνος καταναλώθηκε.
+
+
 
 
 
@@ -67,7 +294,7 @@ every task from WCB has some that it depends on and three times associated with 
 
   Συνήθως περιγράφεται με:
 
-  * Component diagram. (Είναι αυτό το πράγμα με τα blocks, περιγράφεται αναλυτικά)
+  * Component diagrams
 
 - Process view.
 
@@ -110,7 +337,9 @@ every task from WCB has some that it depends on and three times associated with 
 
 Ορίζουν το πως θα πρέπει να δομηθεί, να σχεδιαστεί και να υλοποιηθεί ο κύκλος ζωής λογισμικού.
 
-- Sequential (ακολουθιακά)
+- Sequential
+
+  ![](https://richrtesting.files.wordpress.com/2017/05/sequential1.jpg)
 
 - Waterfall (μοντέλο καταρράκτη)
 
@@ -183,11 +412,11 @@ every task from WCB has some that it depends on and three times associated with 
 
 - Extreme programming
 
+  Iterative. Pair programming, test-driven development, programmer welfare damaged.
+
 - Test-driven development
 
 - Continuous delivery
-
-
 
 Μια γενική μεθολογία ανάπτυξης λογισμικού είναι η RUP. Η ανάλυση της ακολουθεί:
 
@@ -200,86 +429,31 @@ every task from WCB has some that it depends on and three times associated with 
 - Από μικρά εώς μεγάλα έργα λογισμικού
 - UML ως γλώσσα μοντελοποίησης
 
-Χωρίζεται σε 4 φάσεις:
+![](https://upload.wikimedia.org/wikipedia/en/2/2e/RUP_Workflows2.gif)
 
-- inception (σύλληψη ιδέας)
+Η ιδέα είναι να χωρίσουμε σε 4 φάσεις:
 
-  - Ανάγκες εμπλεκόμενων μερών (stakeholders)
-  - Καθορισμός κριτηρίων αποδοχής, εμβέλειας, κλπ
-  - καθορισμός του business case (στρατηγική διαχείρισης ρίσκου, αρχικό πλάνο έργου)
-  - καθορισμός υποψήφιας αρχιτεκτονικής
-  - αξιολόγηση/εκτίμηση ρίσκου
-  - εκτίμηση πόρων που χρειάζονται για την επόμενη φάση
+* Inception
+* Elaboration
+* Construction
+* Transition
 
-  Για να είναι εφικτή συνήθως πρέπει να έχουμε:
-
-  - Ένα mockup prototype
-  - Μια ανάγκη που πρέπει να εξυπηρετηθεί
-  - Κάποιους πόρους
-  - Ένα όραμα
-
-- elaboration (επεξεργασία)
-
-  - Καθορισμός κινδύνων
-  - ευσταθές όραμα για το προϊόν
-  - καθορισμός αρχιτεκτονικής
-  - προγραμματισμός πόρων/κόστους
-  - architecture baseline (?)
-  - tooling
-  - Καθορισμός περιβάλλοντος ανάπτυξης
-  - Το πλάνο ελέγχου
-
-  Για να γίνει πρέπει να έχουμε:
-
-  - Τα αποτελέσματα της προήγουμενης φάσης
-  - Ένα εγκεκριμένο πλάνο και προϋπολογισμό έργου
-  - Τους απαιτούμενους πόρους
-
-- construction (κατασκευή)
-
-  - Διαχείριση των πόρων για την εκτέλεση του έργου ανάπτυξης
-  - Ανάπτυξη σε επαναλήψεις
-  - Ανάπτυξη components ώστε να ικανοποιούν τα σενάρια χρήσης
-  - έλεγχος μονάδων και integration
-  - Αξιολόγηση κύκλου επανάληψης
-
-  Πρέπει να έχουμε διαθέσιμα:
-
-  - Τα προήγουμενα αποτελέσματα
-  - Το πλάνο της τρέχουσας επανάληψης
-  - Εκτίμηση ρίσκου για την τρέχουσα επανάληψη
-  - Προβλήματα που πρόκειται να αντιμετωπίσουμε
-
-- transitition (μετάβαση)
-
-  Τι είναι:
-
-  - Διάθεση του λογισμικού στους χρήστες
-  - Marketing, διανομή, εγκατάσταση, εκμάθηση χρηστών, υποστήριξη, επιδιορθώσεις
-
-  Πρέπει να έχουμε διαθέσιμα:
-
-  - Τα προϊόντα της φάσης κατασκευής σε ώριμη φάση
-
-  ΤΙ κάνουμε:
-
-  - Έλεγχο του προϊόντος στον πελάτη
-  - Fine tuning
-  - Διάθεση στον πελάτη για παραγωγική χρήση
-  - Υλικό υποστήριξης
-
-  Με την ολοκλήρωση του:
-
-  - Επικαιροποιημένο documentation
-  - Νέες δυνατότητες του κατασκευαστή
-
-Rup principles:
+όπου σε κάθε μία από αυτές κάνουμε τα ακόλουθα (σε διαφορετικό βαθμό κάθε φορά):
 
 - Business modeling
+
+  Να δεις ποιά ειναι τα συμφέροντα και οι επιδιώξεις των stakeholders
+
+  
+
 - Requirements
+
 - Analysis and desing
+
 - Implementation
+
 - Testing 
+
 - Deployment
 
 
@@ -327,6 +501,8 @@ Characteristics:
 
 ###### Scrum
 
+Self organizing, cross-functional teams. Teams are supported by two roles: ScrumMaster, a coach for the team and Product Owner, which is the business and guides the team toward building the right product.
+
 Scrum values:
 
 - Courage
@@ -366,6 +542,12 @@ Steps:
 - Sprint retrospective: occurs after the Sprint Review and prior to the next Sprint Planning. The Scrum Team inspects itself
 
 
+
+At the end of a sprint, the team conducts a sprint review during which the team demonstrates the new functionality to the PO or any other stakeholder who wishes to provide feedback that could influence the next sprint.
+
+Another activity in Scrum project management is the sprint retrospective at the end of each sprint. The whole team participates in this meeting, including the ScrumMaster and PO. The meeting is an opportunity to reflect on the sprint that has ended, and identify opportunities to improve.
+
+The most popular and successful way to create a product backlog using Scrum methodology is to populate it with user stories, which are short descriptions of functionality described from the perspective of a user or customer.
 
 
 
@@ -442,39 +624,6 @@ Steps:
 
 
 
-#### Διαγράμματα ροής δεδομένων
-
-- Μετασχηματισμένο Δεδομένο (Κύκλος)
-- Ροή δεδομένων με βέλη
-- Πηγή πληροφορίας ή έξοδος πληροφορορίας τετράγωνο
-
-Δίκτυο από δεδομένα που ρέουν και μετασχηματίζονται σε νέα δεδομένα από μετασχηματισμούς.
-
-Δεν αναπαρίσταται η πληροφορία χρονισμού.
-
-Πρέπει να υπάρχει ισορροπία μεταξύ της ουσιώδους και της κατασκευαστικής λεπτομέρειας.
-
-
-
-#### Εννοιολογικά μοντέλα δεδομένων (ERD)
-
-Οντότητες και συσχετίσεις μεταξύ των οντοτήτων.
-
-Οι οντότητες έχουν ορισμένα πεδία.
-
-
-
-#### Διάγραμμα μετάβασης καταστάσεων
-
-Σαν DFA.
-
-Συμβολισμοί:
-
-- Κατάσταση έναρξης τελεία
-- Κατάσταση τέλους διπλή τελεία
-- Κατάσταση τετράγωνο
-- Τα βέλη δείχνουν γεγονός/απόκριση
-
 #### Λεξικό δεδομένων
 
 Μια πλήρη χαρτογράφηση (Πίνακας ή ΒΔ) των δεδομένων της εφαρμογής.
@@ -502,6 +651,8 @@ Steps:
 
   - Singleton: μια κλάση να έχει αποκλειστικά ένα στιγμιότυπο. Πχ θέλουμε ένας πόρος του συστήματος να αρχικοποιείται μια φορά. Έχει private constructor.
 
+  - Abstract factory: interface
+
   - Factory method pattern: Φτιάξε μια μέθοδο που παίρνει ως input ένα String και σου επιστρέφει ένα αντικείμενο που ανήκει σε ένα σύνολο από κλάσεις που κληρονομούν από μια βασική κλάση ανάλογα με το String. Πότε το χρειάζεσαι; Όταν στο runtime θές πολύ συχνά να δημιουργείς αντικείμενα μιας βασικής κλάσης αλλά δεν ξέρεις από πριν ποιάς υποκλάσης αντικείμενα θες να δημιουργήσεις.
 
   - Builder pattern
@@ -524,6 +675,8 @@ Steps:
 
   - Object pool: να cachaρει αντικείμενα τα οποία είναι ακριβά να κατασκευαστούν
 
+    μικρό pool φράσσει την απόδοση. Αποφυγή των DoS attacks. Borrow & return μοτίβο.
+
 - Structural patterns
 
   Τα δομικά κατασκευαστικά πρότυπα δίνουν λύσεις στις σχέσεις που μπορούν να έχουν τα διάφορα obejcts.
@@ -536,15 +689,53 @@ Steps:
 
   * Composite pattern:
 
-    Αντικείμενα που έχουν την ίδια διεπαφή μπορούν να γίνουν composed σε πιο μεγάλα αντικείμενα που με κάποιο τρόπο επιτελούν τις λειτουργίες των αντικειμένων που περιέχουν.
+    Σου επιτρέπει να μεταβάλλεις ένα object ή ένα collection από objects με τον ίδιο τρόπο.
+
+    Παράδειγμα: SongComponent, SongGroup, Song. A SongComponent has an arraylist of SongGroups which have a collection of Songs
+
+  * Bridge pattern
+
+    Shape: Triangle, Square.
+
+    And you basically have Red Triangles and Blue Triangles and Red Squares and Blue Squares.
+
+    But why not Purple Triangles too?
+
+    The idea is that the abstraction is to tied with the implementation that we can't do much.
+
+    We create an Implementer interface Color and the implementations Red, Blue.
+
+    έμφαση στην σύνθεση, όχι την κληρονομικότητα
+    χρήση δύο ιεραρχιών, μία “δημόσια”, μία “ιδιωτική”
+    “δημόσιες” αφαιρέσεις χρησιμοποιούν “ιδιωτικές” υλοποίησεις
+    οι ιεραρχίες εξελίσσονται ανεξάρτητα
 
   * Facade
 
-    Provide a simple interface to a complex system.
-
-  * 
+    Provide a simple interface to a complex system
 
 - Behavioral patterns
+
+  In software engineering, behavioral design patterns are design patterns that identify common communication patterns between objects and realize these patterns. By doing so, these patterns increase flexibility in carrying out this communication.
+
+  Most common:
+
+  * Chain of responsibility
+  * Command
+  * Interpreter
+  * Iterator
+  * Mediator
+  * Memento
+  * Null Object
+  * Observer
+  * State
+  * Strategy
+  * Template method
+  * Visitor
+
+
+
+
 
 ![Screenshot from 2019-01-23 01-50-58](/home/giannis/Pictures/sxediasi.png)
 
@@ -559,8 +750,8 @@ Steps:
 
 * Αρχιτεκτονική σχεδίαση
 
-  * Διάγραμμα δομής
-  * Διάγραμμα διάταξης
+  * Διάγραμμα δομής (βγαίνει από το data flow diagram)
+  * Διάγραμμα διάταξης (deployment diagram?)
 
 * Σχεδίαση διεπαφών
 
@@ -1018,174 +1209,7 @@ UX: the discussion with the waitress
     * Overloading
     * Coercion (αυτόματες μετατροπές τύπων)
 
-
-
-### UML
-
-Modeling language to express and design documents, software, systems and more.
-
-UML is NOT a methodology. Also, it is independent of the implementation language.
-
-Support understanding of software to customers and development.
-
-Concepts:
-
-* Models: an abstraction describing subsets of a system
-* View: depicts selected aspects of a model
-* Notation: graphical or textual rules to depict views
-
-Stereotype: a mechanism for extending the vocabulary (and thus the expressive power) of UML.
-
-
-
-#### Use case diagrams
-
-##### Include relation
-
-Λέει σε τι επιμέρους κομμάτια γίνεται split μια ενέργεια. 
-
-![](https://www.uml-diagrams.org/use-case-diagrams/use-case-include-split.png)
-
-##### Generalization
-
-Κάτι σαν να βάζεις επίπεδα abstraction.
-
-Ότι για παράδειγμα, ένα withdraw cash ανήκει στην κατηγορία action Bank ATM Transaction.
-
-![](https://i.stack.imgur.com/VThNF.png)
-
-
-
-##### Extend
-
-Action1 -> Action2
-
-Action1 <<extends>> Action2, αυτό σημαίνει ότι μπορείς να κάνεις το Action2 χωρίς να κάνεις το Action1.
-
-
-
-
-
-#### Class diagrams
-
-A static overview of the system in terms of classes. It displays what interacts but not what happends when interactions occur.
-
-It shows attributes and operations for each class.
-
-
-
-##### UML class diagrams notations
-
-* A class is a rectangle divided into:
-  * Class name
-  * Class atributes
-  * Class operations
-* Modifiers:
-  * $-$ Private
-  * $+ $ Public
-  * $\#$ Protected
-  * $/$ derived. Can be combined with others
-  * Underlined: Static 
-
-* Abstract classes in italics
-
-
-
-##### Multiplicities
-
-Τις βάζουμε στο edge end που αφορούν
-
-0..1: zero or one instances
-
-0..*: zero to infinity instances
-
-1: exactly one instance
-
-1..*: one or more instances
-
-
-
-##### Association
-
-Logical relation between entities (high level).
-
-Μπορούμε να βάλουμε labels πάνω στα associations.
-
-Πάνω στα labels μπορούμε να βάλουμε και τα reading directions.
-
-
-
-
-
-##### Aggregation
-
-Δείχνει ένα has-A αλλά η άλλη κλάση μπορεί να υπάρξει και μόνη της.
-
-
-
-![](/home/giannis/ntua-lambda/softeng/aggregation.jpg)
-
-
-
-Μια ρόδα μπορεί να υπάρχει χωρίς να ανήκει σε κάποιο αμάξι.
-
-
-
-##### Composition
-
-Και αυτό κάνει demonstrate μια "has-A" σχέση, αλλά εδώ τα πράγματα ειναι πιο σκληρά. Άμα πεθάνει η base class πεθαίνει και το άλλο class. 
-
-![](/home/giannis/ntua-lambda/softeng/composition.jpg)
-
-Δεν μπορεί να υπάρχει ένα αυθύπαρκτο leg.	
-
-
-
-##### Realization / Implementation
-
-Arrow meaning: source **realizes** dst.
-
-Πάει πολύ για abstract classes / interfaces.
-
-![](https://cdn.visual-paradigm.com/guide/uml/uml-class-diagram-tutorial/16-realization.png)
-
-
-
-Δεν μπορείς να φτιάξεις ποτέ έναν owner. Όμως μπορείς να φτιάξεις έναν Person που κάνει implement τον Owner.
-
-
-
-##### Inheritance
-
-Arrow meaning: source **inherits** from dst.
-
-
-
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/KP-UML-Generalization-20060325.svg/300px-KP-UML-Generalization-20060325.svg.png)
-
-
-
-Μπορείς δηλαδή να φτιάξεις ένα Person που δεν είναι ούτε Student ούτε Professor.
-
-
-
-##### Dependency
-
-Το dependency σημαίνει ότι δεν υπάρχει σχέση foreign key, αλλά μπορεί να υπάρχει κάποια συνάρτηση που να παίρνει ως όρισμα ένα αντικείμενο μιας τέτοιας άλλης κλάσης. 
-
-Για παράδειγμα, ένας Person μπορεί να σκοτώσει ένα Fish.
-
-
-
-![](/home/giannis/ntua-lambda/softeng/dependency.jpg)
-
-
-
-
-
 ### Web
-
-
 
 `scheme://[user:password@]host[:port]/path[?query][#fragment]`
 
@@ -1193,6 +1217,7 @@ Arrow meaning: source **inherits** from dst.
 * `host`: www.wikipedia.org
 * `port`: socket connection port. HTTPS uses 443, HTTP uses 80.
 * `path`: index.html
+* `#fragment` σε ποιό μέρος της σελίδας να πάς
 
 
 
@@ -1379,6 +1404,8 @@ Infrastructure automation.
 
 * usability testing
 
+  **Usability testing** is a way to see how easy to use something is by **testing** it with real users. Users are asked to complete tasks, typically while they are being observed by a researcher, to see where they encounter problems and experience confusion.
+
   A/B testing
 
 * security testing
@@ -1422,5 +1449,10 @@ Essential complexity are the problems that arise from user needs and cannot be r
 
 
 
-
+Test life-cycle:
+➢ επισκόπηση απαιτήσεων
+➢ σχεδιασμός δοκιμασιών
+➢ καθορισμός περιβάλλοντος δοκιμασιών
+➢ εκτέλεση δοκιμασιών
+➢ παραγωγή αναφορών
 
