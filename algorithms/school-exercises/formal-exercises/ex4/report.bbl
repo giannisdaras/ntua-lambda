@@ -1,0 +1,31 @@
+\begin{thebibliography}{1}
+
+\bibitem{bellman2013dynamic}
+Richard Bellman.
+\newblock {\em Dynamic programming}.
+\newblock Courier Corporation, 2013.
+
+\bibitem{chen1998finding}
+Shigang Chen and Klara Nahrstedt.
+\newblock On finding multi-constrained paths.
+\newblock In {\em Communications, 1998. ICC 98. Conference Record. 1998 IEEE
+  International Conference on}, volume~2, pages 874--879. IEEE, 1998.
+
+\bibitem{dijkstra1976discipline}
+Edsger~Wybe Dijkstra, Edsger~Wybe Dijkstra, Edsger~Wybe Dijkstra, Etats-Unis
+  Informaticien, and Edsger~Wybe Dijkstra.
+\newblock {\em A discipline of programming}, volume~1.
+\newblock prentice-hall Englewood Cliffs, 1976.
+
+\bibitem{howard1966dynamic}
+Ronald~A Howard.
+\newblock Dynamic programming.
+\newblock {\em Management Science}, 12(5):317--348, 1966.
+
+\bibitem{lawler1980generating}
+Eugene~L. Lawler, Jan~Karel Lenstra, and AHG Rinnooy~Kan.
+\newblock Generating all maximal independent sets: Np-hardness and
+  polynomial-time algorithms.
+\newblock {\em SIAM Journal on Computing}, 9(3):558--565, 1980.
+
+\end{thebibliography}
