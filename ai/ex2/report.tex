@@ -1,0 +1,519 @@
+\documentclass[a4paper,oneside, 11pt]{article}
+\usepackage[margin=0.7in]{geometry}
+\usepackage[cm-default]{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{xgreek}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{parallel,enumitem}
+\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true}
+\setmainfont[Mapping=tex-text]{CMU Serif}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{mathtools, amsmath}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{titling}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+
+
+% LOGICAL EXERCISES RULES
+\newcommand*{\im}{\ensuremath{\to}}
+\newcommand*{\ex}{\ensuremath{\exists}}
+\newcommand*{\f}{\ensuremath{\forall}}
+\newcommand*{\p}{\ensuremath{\left(}}
+\newcommand*{\pp}{\ensuremath{\right)}}
+\newcommand*{\ww}{\ensuremath{\wedge}}
+\newcommand*{\vv}{\ensuremath{\vee}}
+\newcommand*{\eq}{\ensuremath{\equiv}}
+
+% EXERCISE SPECIFIC RULES
+\newcommand*{\Ch}{\ensuremath{\textrm{Χώρα}}}
+\newcommand*{\Sin}{\ensuremath{\textrm{συνορεύειΜε}}}
+\newcommand*{\Ek}{\ensuremath{\textrm{έκταση}}}
+\newcommand*{\Bg}{\ensuremath{\textrm{ΜεγαλύτερηΑπό}}}
+
+
+
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=mystyle}
+\makeatletter
+\def\maxwidth{%
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\makeatletter
+\newcommand\xlongleftrightarrow[2][]{%
+\ext@arrow 0059{\longleftrightarrowfill@}{#1}{#2}%
+}
+\def\longleftrightarrowfill@{%
+\arrowfill@ ← \relbar → }
+\makeatother
+
+
+
+
+\pretitle{%
+		\begin{center}
+		\LARGE
+		\includegraphics[height=7cm]{pyrforos.png}\\[\bigskipamount]
+}
+\posttitle{\end{center}}
+\title{\textbf{Τεχνητή Νοημοσύνη \\ 2η Γραπτή Εργασία}}
+\author{ Ιωάννης Δάρας (\texttt{03115018, el15018@central.ntua.gr, daras.giannhs@gmail.com})
+}
+\date{“Leave logic aside… too much thoughts is a clear sign of insomnia.” \\ --- Deyth Banger, Jokes From A}
+
+\newtheorem{theorem}{Theorem}
+\begin{document}
+\maketitle
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+
+
+
+\section{Άσκηση 1}
+\subsection{}
+$$
+p \im \left( \neg \left( q \im \left( r \ww (s \im t) \right) \right) \right)
+$$
+$$
+\eq p \im \p \neg \p q \im \p r \ww \p \neg s \vv t \pp \pp \pp \pp
+$$
+$$
+\eq \neg p \vv \p \neg \p q \im \p r \ww \p \neg s \vv t \pp \pp \pp \pp
+$$
+$$
+\eq \neg p \vv \p \neg \p \neg q \vv \p r \ww \p \neg s \vv t \pp \pp \pp \pp $$
+$$
+\eq \neg p \vv \p q \ww \p \neg r \vv \p s \ww \neg t \pp \pp \pp
+$$
+$$
+\eq \p \neg p \vv q \pp \ww \neg p \vv \p \neg r \vv \p s \ww \neg t \pp \pp
+$$
+$$
+\eq \p \neg p \vv q \pp \ww  \neg p \vv \p \neg r \vv s \pp \ww \p \neg r \vv \neg t \pp 
+$$
+$$
+\eq \p \neg p \vv q \pp \ww \p \neg p \vv \p \neg r \vv s \pp \pp \ww \p \neg p \vv \p \neg r \vv \neg t \pp \pp
+$$
+$$
+\eq \boxed{ \p \neg p \vv q \pp \ww \p \neg p \vv \neg r \vv s \pp \ww \p \neg p \vv \neg r \vv \neg t \pp }
+$$
+
+
+
+\subsection{}
+$$
+\ex x. \f y. \ex z. \p \p A(x,y,z) \ww \neg B(z) \pp \im \neg \p \f w. \p C(x, w, z) \vv K(y) \pp \pp \pp 
+$$
+$$
+\eq \ex x. \f y. \ex z. \p \neg \p A(x,y,z) \ww \neg B(z) \pp \vv \neg \p \f w. \p C(x,w,z) \vv K(y) \pp \pp \pp 
+$$
+$$
+\eq \ex x. \f y. \ex z. \p \p \neg A(x,y,z) \vv B(z) \pp \vv \p \ex w. \neg \p C(x,w,z) \vv K(y) \pp \pp \pp 
+$$
+$$
+\eq \ex x. \f y. \ex z. \p \p \neg A(x,y,z) \vv B(z) \pp \p \ex w. \p \neg C(x,w,z) \ww \neg K(y) \pp \pp \pp
+$$
+$$
+\eq \ex x. \f y. \ex z. \ex w. \p \p \neg A(x,y,z) \vv B(z) \pp \vv \p \neg C(x,w,z) \ww \neg K(y) \pp \pp
+$$
+$$\eq \ex x. \f y. \ex z. \ex w. \p \p \neg A(x,y,z) \vv B(z) \vv \neg C(x,w,z) \pp \ww \p \neg A(x,y,z) \vv B(z) \vv \neg K(z) \pp \pp
+$$
+
+Το μετατρέπουμε σε Skolem normal form, οπότε και προκύπτει:
+$$
+\boxed{\big( A(c, y, f(y)) \vv B(f(y)) \vv \neg C(c, g(y), f(y))\big) \ww \big( \neg A(c, y, f(y)) \vv B(f(y)) \vv \neg K(f(y)) \big)}
+$$
+όπου c είναι μια σταθερά του σύμπαντος Δ και $y \in \Delta $. \bigbreak 
+Σε μορφή λιστών γράφεται:
+$$\{ \bigg[\big(c,y,f(y)\big), B\big(f(y)\big), \neg C\big(c, g(y), f(y)\big)\bigg], \bigg[\neg A\big(c, y, f(y)\big), B\big(f(y)\big), \neg K\big(f(y)\big)\bigg]\}$$
+
+
+
+\section{Άσκηση 2}
+
+\subsection{}
+\subsubsection{Μοντέλο}
+Μια ερμηνεία που είναι μοντέλο είναι η ακόλουθη:
+$$\{p=0, \quad q=1, \quad r=1, \quad t=1, \quad t=1, \quad s=1\}$$
+
+
+\subsubsection{Όχι μοντέλο}
+Μια ερμηνεία που δεν είναι μοντέλο είναι η ακόλουθη:
+$$
+\{p=1, \quad q=0, \quad r=1, \quad t=1, \quad t=1, \quad s=1\}
+$$
+
+\subsection{}
+\subsubsection{Μοντέλο}
+Έστω το σύμπαν $\Delta = \{x\in \mathcal{N}^+,y\in \mathcal N^+,z \in \mathcal{N}^+ \}$ και η ερμηνεία $\mathcal I$ ώστε $$A^\mathcal I(x,y,z) = \{(x,y,z) \in \Delta . \quad  x < y < z\}$$
+Για αυτή την ερμηνεία του κατηγόρηματος Α έχουμε ότι: 
+$$\ex x. \f y. \ex z \p \p A^\mathcal I (x, y, z) \ww \neg B^\mathcal I(z)\pp \pp \eq False$$
+Καθώς δεν υπάρχει φυσικός αριθμός που όλοι οι άλλοι φυσικοί αριθμοί είναι αυστηρώς μεγαλύτεροι του. Συνεπώς, λόγω της συνεπαγωγής, έχουμε ότι:
+
+$$
+\ex x. \f y. \ex z. \p \p A^\mathcal I(x,y,z) \ww \neg B^\mathcal I(z) \pp \im \neg \p \f w. \p C^\mathcal I(x, w, z) \vv K^\mathcal I(y) \pp \pp \pp \eq True
+$$
+
+Άρα, για αυτή την ερμηνεία του κατηγόρηματος Α έχουμε μοντέλο για κάθε ερμηνεία των κατηγορημάτων B, C, K. \bigbreak 
+
+Για λόγους πληρότητας ορίζουμε:
+$$\Delta = \{x\in \mathcal{N}^+,y\in \mathcal N^+,z \in \mathcal{N}^+ \}$$
+
+$$A^\mathcal I(x,y,z) = \{(x,y,z) \in \Delta .  \quad x < y < z\}$$
+
+$$
+B ^ \mathcal I(z) = \{ z \in \Delta. \quad True\}
+$$
+
+$$C^\mathcal I(x,w,z) = \{(x,w,z) \in \Delta . \quad  True \}$$
+
+
+$$
+K ^ \mathcal I(y) = \{ y \in \Delta. \quad False\}
+$$
+
+\subsubsection{Όχι μοντέλο}
+Έστω το σύμπαν $\Delta = \{x\in \mathcal{N}^+,y\in \mathcal N^+,z \in \mathcal{N}^+ \}$ και η ερμηνεία $\mathcal I$ ώστε: $$A^\mathcal I(x,y,z) = \{(x,y,z) \in \Delta . \quad  x \leq y \leq z\}$$
+
+$$
+B ^ \mathcal I(z) = \{ z \in \Delta. \quad True\}
+$$
+
+$$C^\mathcal I(x,w,z) = \{(x,w,z) \in \Delta . \quad  w > x > z\}$$
+
+$$
+K ^ \mathcal I(y) = \{ y \in \Delta. \quad False\}
+$$
+
+Για αυτή την ερμηνεία του κατηγορήματος Α έχουμε ότι:
+$$\ex x. \f y. \ex z \p \p A^\mathcal I (x, y, z) \ww \neg B^\mathcal I(z)\pp \pp \eq True$$
+
+καθώς το σύμπαν μας, έχει έναν φυσικό αριθμό που ανήκει σε αυτόν, το $x = 0$, όπου είναι μικρότερος από κάθε αριθμό y και για κάθε αριθμό y υπάρχει ένας αριθμός z, το z=y, που είναι μεγαλύτερος ή ίσος από αυτόν. \bigbreak 
+
+Για αυτή την ερμηνεία του κατηγορήματος C έχουμε ότι:
+$$\ex x. \ex z. \f w. \p C^ I(x, w, z) \vv K^\mathcal I(y)\pp \equiv False$$
+
+Καθώς $C^\mathcal I \equiv False$ λόγω του w=0, που δεν υπάρχει αριθμός από τον οποίο είναι αυστηρά μεγαλύτερος στους φυσικούς. 
+
+Άρα, συνολικά:
+
+
+$$
+\ex x. \f y. \ex z. \p \p A^\mathcal I(x,y,z) \ww \neg B^\mathcal I(z) \pp \im \neg \p \f w. \p C^\mathcal I(x, w, z) \vv K^\mathcal I(y) \pp \pp \pp \eq False
+$$
+
+\section{Άσκηση 3}
+
+\subsection{}
+
+$$\{p\big(z, f(g(a))\big), \quad p\big(x, f(w)\big) \}$$
+
+$$\{ z/x, \quad f(g(a)) / f(w) \}$$
+$$\boxed{ \{z/x, \quad w/g(a)\}}$$
+
+\subsection{}
+$$\{ q\big(v, h(c), t\big), \quad q\big(g(y), z, g(a) \big), \quad q(w, u, w)\}$$
+
+$$
+\{v/g(y), \quad w/g(y), \quad z/h(c), \quad u/h(c), \quad t/g(a), \quad w/g(a)\}   
+$$
+$$
+\boxed { \{ y/a, \quad v/g(a), \quad w/g(a), \quad z/h(c), \quad u/h(c), \quad t/g(a), \quad w/g(a) \} }
+$$
+
+
+\subsection{}
+$$
+\{ r\big(f(x), \quad g(t)\big), \quad r\big(f(z), b\big)\}
+$$
+$$
+\{ f(x)/f(z), \quad g(t)/b \}
+$$
+$$
+\boxed{ \{ x/z, \quad b/g(t)\}}
+$$
+
+\subsection{}
+$$
+\{ p\big( f(u), g(f(a), t) \big), \quad p\big( f(b), g(x,y) \big), \quad p\big(w, g(z, h(v) \big)\}
+$$
+$$
+\{ f(u)/f(b), \quad w/f(b), \quad x/f(a), \quad z/f(a), \quad t/h(v), \quad y/h(v)\}
+$$
+$$
+\boxed{ \{ u/b, \quad w/f(b), \quad x/f(a), \quad z/f(a), \quad t/h(v), \quad y/h(v)\}}
+$$
+
+\subsection{}
+$$q(f(a), x), p(z,c)$$
+
+
+
+Δεν υπάρχει ενοποιητής καθώς στο σύνολο περιέχονται διαφορετικές συναρτήσεις.
+
+
+\section{Άσκηση 4}
+
+Μας δίνεται η γνώση:
+$$
+\mathcal{K} = \{ \f x \ex y. \big( A(x) \im \p R(x,y) \ww C(y) \pp \big),  \f x \ex y \big( B(x) \im S(y,x) \ww D(y) \big), \f x \big( D(x) \im A(x) \big ), 
+$$
+$$
+\f x \f y \big( S(x,y) \im T(y,x) \big) \}
+$$
+
+$$
+\mathcal{K} = \{ \f x \ex y. \big( \neg A(x) \vv \p R(x,y) \ww C(y) \pp \big), \f x \ex y. \big( \neg B(x) \vv \p S(y,x) \ww D(y) \pp \big), \f x \big ( \neg D(x) \vv A(x) \big), 
+$$
+$$
+\f x \f y \big( \neg S(x,y) \vv T(y,x) \big)
+\}
+$$
+
+$$
+\mathcal{K} = \{ \f x \ex y. \big( \p \neg A(x \vv R(x,y)\pp \ww \p \neg A(x) \vv C(y) \pp \big), \f x \ex y \big( \p \neg B(x) \vv S(y,x) \pp \ww \p \neg B(x) \vv D(y) \pp \big), \neg D(x) \vv A(x),
+$$
+$$
+\neg S(x,y) \vv T(y,x)
+\}
+$$
+
+$$
+\mathcal{K} = \{ \big( \neg A(x) \vv R(x, f(x)) \big) \ww \big(  \neg A(x) \vv C(f(x)) \big), \big( \neg B(x) \vv S(g(x), x) \big) \ww \big( \neg B(x) \vv D(g(x)) \big), \{ \neg D(x), A(x) \},
+$$
+$$
+\{ \neg S(x,y), T(y,x) \}
+\}
+$$
+\pagebreak 
+
+$$
+\mathcal{K} = \{ \{ \neg A(x), R(x, f(x))\},\{\neg A(x), C(f(x)) \}, \{ \neg B(x), S(g(x), x)\}, \{ \neg B(x), D(g(x)), \{ \neg D(x), A(x) \}\}, 
+$$
+$$
+\{ \neg S(x,y), T(y,x) \}
+\}
+$$
+
+Για την πρόταση $\mathcal F$ έχουμε:
+$$
+\mathcal{F} = \ex y. \ex z. \big( T(x,y) \ww R(y,z) \ww C(z) \big)
+$$
+
+Θέλουμε να δούμε αν με βάση τη γνώση $\mathcal{K}$ ισχύει ότι:
+$$\mathcal{F} \quad |= B(x) \im Q(x)$$
+
+Από τη CNF μορφή της γνώσης $\mathcal K$ έχουμε ότι:
+$$\{ \neg B(x), S(g(x), x) \}$$
+Άρα,
+$$B(x) \im \big( \neg B(x) \ww S(g(x), x) \big)$$
+$$\equiv \{ S(g(x), x) \}$$
+Με βάση όμως τη γνώση $\{ \neg S(x,y), T(y,x) \}$ η γνώση αυτή γράφεται:
+
+\begin{equation}
+\eq \{ T(x, g(x)) \}
+\end{equation} 
+
+\bigbreak 
+
+Ακόμη από τη CNF της γνώσης $\mathcal K$ έχουμε:
+$$\{ \neg B(x), D(g(x))\}$$
+
+Άρα,
+$$B(x) \im \big( \neg B(x) \ww D(g(x)) \big)$$
+$$\eq \{ D(g(x))\}$$
+Όμως, με βάση τη γνώση $\{ \neg D(x), A(x) \}$, η παραπάνω σχέση γράφεται:
+$$\eq \{ A(g(x)) \}$$
+Η παραπάνω γνώση, γράφεται με τη σειρά της με βάση τη γνώση $\{ \neg A(x), R(x, f(x))\}$, ως εξής:
+\begin{equation} 
+\eq \{ R(g(x), f(g(x)) \} 
+\end{equation}
+
+
+\bigbreak
+
+
+Ακόμη, από τη CNF μορφή της γνώσης $\mathcal{K}$ έχουμε:
+$$\{ \neg B(x), D(g(x))\}$$
+
+Συνεπώς:
+$$B(x) \im \big( \neg B(x) \ww D(g(x))\big)$$
+$$\equiv \{ D(g(x))\}$$
+Η παραπάνω γνώση, με βάση την γνώση $\{ \neg D(x), A(x) \}$ από τη CNF μορφή της $\mathcal K$, γράφεται:
+$$\eq \{ A(g(x))\} $$
+Με βάση τώρα τη γνώση $$\{ \neg A(x), C(f(x)) \}$$, η παραπάνω γνώση γράφεται:
+\begin{equation}
+\eq \{C\big( f(g(x))\big)\}
+\end{equation}
+
+
+\bigbreak 
+
+Οι σχέσεις (1), (2), (3) συνιστούν μια γνώση για το σύμπαν μας και συνεπώς ισχύει:
+$$B(x) \im \big( T(x,g(x)) \ww R\p g(x), f(g(x))\pp \ww C\p f(g(x))\pp \big)$$
+
+Αφού θέλουμε να δούμε αν ισχύει:
+$$\mathcal{F} \quad |= B(x) \im Q(x)$$
+αρκεί να δούμε αν υπάρχει ενοποιητής:
+$$\{ B(x) \im \big( T(x,g(x)) \ww R\p g(x), f(g(x))\pp \ww C\p f(g(x))\pp \big),\quad \ex y. \ex z. \big( T(x,y) \ww R(y,z) \ww C(z) \big) \}$$
+$$
+\{ B(x) \im \big( T(x,g(x)) \ww R\p g(x), f(g(x))\pp \ww C\p f(g(x))\pp \big), \quad  T(x,c) \ww R(c,m) \ww C(m)  \}
+$$
+όπου c, m σταθερές του σύμπαντος. \bigbreak 
+
+Από την ενοποίηση παίρνουμε:
+$$g(x) = c, \quad f(g(x)) =  m$$
+$$\eq f(c) = m$$
+
+Προφανώς κάτι τέτοιο δεν γνωρίζουμε ότι ισχύει για δύο σταθερές $c, m$ του σύμπαντος και συνεπώς η ενοποίηση αποτυγχάνει. \bigbreak 
+
+Από τα προαναφερθέντα, προκύπτει ότι:
+$$\mathcal K, \mathcal F \not \models Q(x) \impliedby B(x) $$
+
+\section{Άσκηση 5}
+\subsection{}
+$$
+\neg \p \ex x: \Ch(x) \ww \Sin (x,x) \pp
+$$
+\subsection{}
+
+$$
+\f x \Ch(x) \ex y \Ch(y). \Sin(x,y)
+$$
+\subsection{}
+$$
+\ex x. ( \ex y. \ex z. \ex w. \Ch(x) \ww \Ch(y) \ww \Ch(z) \ww  y \neq z \ww y \neq w \ww z \neq w \ww 
+$$
+$$\Sin(x,y) \ww \Sin(x,z) \ww \Sin(x,w) ) $$
+\subsection{}
+$$
+\ex x \ex y . \p \Ch(x) \ww \Ch(y) \ww \f z \p \Sin(x,z) \im z = y\pp \ww \p \Sin(y,z) \im z=x \pp \pp
+$$
+
+
+
+
+
+\section{Άσκηση 6}
+
+\subsection{}
+Για την πρώτη πρόταση έχουμε:
+$$
+\f x  \p f(x) \im g(a) \pp 
+$$
+$$
+= \f x \p \neg f(x) \vv g(a) \pp
+$$
+Θέτουμε:
+$$
+h(x) = \neg f(x)
+$$
+Έτσι, η πρώτη πρόταση γίνεται:
+$$
+\forall x \p h(x) \vv g(a) \pp
+$$
+
+\bigbreak
+
+Για τη δεύτερη πρόταση έχουμε:
+$$
+\p \f x f(x) \im g(a) \pp 
+$$
+$$
+= \p \p \neg \p \f x f(x) \pp \pp \vv g(a) \pp
+$$
+$$
+= \p \p \ex x \neg f(x) \pp \vv g(a) \pp 
+$$
+$$
+=  \p \p \ex x h(x) \pp \vv g(a) \pp
+$$
+Προκειμένου να βρεθεί ερμηνεία ώστε η δεύτερη πρόταση να είναι ψευδής πρέπει $g(a) = 0 \f a \ww h(x) = 0 \forall x$. Αν ισχύει όμως αυτή η συνθήκη αυτομάτως είναι ψευδής και η πρώτη πρόταση. \bigbreak
+
+Άρα, δεν υπάρχει ερμηνεία ώστε να είναι ψευδής η δεύτερη και αληθής η πρώτη πρόταση.
+ 
+\subsection{}
+
+Για την πρώτη πρόταση έχουμε:
+$$
+\ex x. \p f(x) \im g(a) \pp
+$$
+$$
+= \ex x. \p \neg f(x) \vv g(a) \pp
+$$
+Θέτω:
+$$
+h(x) = \neg f(x)
+$$
+Άρα, για την πρώτη πρόταση έχουμε:
+$$
+\ex x . \p h(x) \vv g(a) \pp
+$$
+\bigbreak 
+
+Η δεύτερη πρόταση είναι:
+$$
+\p \p \ex x. f(x) \pp \im g(a) \pp
+$$
+$$
+= \p \neg \p \ex x f(x) \pp  \vv g(a) \pp
+$$
+$$
+= \p \p \f x \neg f(x) \pp \vv g(a) \pp
+$$
+Άρα, για τη δεύτερη πρόταση έχουμε:
+$$
+\p \p \f x h(x) \pp \vv g(a) \pp$$
+\bigbreak
+Ορίζουμε την ερμηνεία $\mathcal{I}$ για τη γλώσσα $\mathcal{L}$:
+\begin{itemize}
+\item $x, a \in \mathcal{N}$
+\item $g(a)=:= \neg (a = a)$
+\item $f(x)=:= \neg (x=0) \Rightarrow h(x) =:= x=0$ 
+\end{itemize}
+\bigbreak
+Έτσι, η πρώτη πρόταση λεεί ότι υπάρχει x ώστε ο x να είναι μηδέν ή κάτι ψευδές. Προφανώς, η πρόταση αυτή αληθεύει γιατί υπάρχει ένα $x \in N$, το $x=0$. \bigbreak 
+
+Η δεύτερη πρόταση λέει ότι κάθε x είναι 0 ή κάτι ψευδές, άρα είναι πάντα ψευδής για τη συγκεκριμένη ερμηνεία.
+
+
+\section{Βιβλιογραφία}
+\noindent[1] Robinson, J. Alan (1965). "A Machine-Oriented Logic Based on the Resolution Principle". Journal of the ACM. \par 
+\noindent[2] Ivan Bratko, Prolog Programming for Artificial Intelligence, 4th ed., 2012 \par
+\noindent[3] Franz Baader and Jörg H. Siekmann [de] (1993). "Unification Theory". In Handbook of Logic in Artificial Intelligence and Logic Programming. \par
+\noindent[4] Jörg H. Siekmann (1990). "Unification Theory". In Claude Kirchner (editor) Unification. Academic Press. \par 
+\noindent[5] Ben-Ari, Mordechai (2003). Mathematical Logic for Computer Science (2nd ed.).
+
+\end{document}
