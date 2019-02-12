@@ -228,6 +228,8 @@ A **database view** is a searchable object in a **database**that is defined by a
 
   * Activity Diagram
 
+    Διαβάζονται από πάνω προς τα κάτω.
+
     Οι διαφορές του με το State Diagram είναι:
 
     * Οι πολλαπλές ενέργειες ξεκινάνε από ένα μαύρο και καταλήγουν σε ένα μαύρο
